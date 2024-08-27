@@ -46,7 +46,7 @@ class CustomerData(BaseModel):
 
 
 def predict_new(data: CustomerData) -> str:
-    """ This function takes the user input as Pydantic and return the response
+    """ This function takes the user input as Pydantic and return the response (FastAPI)
     """  
 
     # Concatenate all features form Pydantic
@@ -60,6 +60,16 @@ def predict_new(data: CustomerData) -> str:
 
     # Apply Transformation
     X_processed = pipe.transform(X_new)
+
+    # Prediction
+    y_pred = model_forest.predict(X_processed)[0]
+
+    return 'Exited' if y_pred==1 else 'Not Exited'
+
+def predict_new2(data):
+    """Flask usage"""
+    # Apply Transformation
+    X_processed = pipe.transform(data)
 
     # Prediction
     y_pred = model_forest.predict(X_processed)[0]

@@ -6,4 +6,103 @@
 
 {% block body %}
 <h1>Predict</h1>
+<hr>
+<br>
+<br>
+
+<form action="/predict" method="POST">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="credit">CreditScore</label>
+            <input type="number" step=0.001 class="form-control" id="credit" name="credit" placeholder="CreditScore"
+                aria-label="Enter CreditScore">
+            <small id="credithelp" class="from-text text-muted">This field is required</small>
+            <br>
+            <br>
+
+            <label for="'Geography'">Geography</label>
+            <select class="form-control" id="geoo" name="geoo" placeholder="Geography"
+                aria-label="Enter Geography">
+                <option>France</option>
+                <option>Germany</option>
+                <option>Spain</option>
+            </select>
+            <small id="Geographyhelp" class="from-text text-muted">This field is required</small>
+
+
+            <br>
+            <br>
+
+            <label for="Gender">Gender</label>
+            <select class="form-control" id="gender" name="gender" placeholder="Gender" aria-label="Enter Gender">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+            <small id="genderhelp" class="from-text text-muted">This field is required</small>
+            <br>
+            <br>
+
+            <label for="Age">Age</label>
+            <input type="number" step=1 class="form-control" id="age" name="age" placeholder="Age"
+                aria-label="Enter Age">
+            <small id="agehelp" class="from-text text-muted">This field is required</small>
+            <br>
+            <br>
+
+            <label for="Tenure">Tenure</label>
+            <input type="number" step=1 class="form-control" id="tenure" name="tenure" placeholder="Tenure"
+                aria-label="Enter Tenure">
+            <small id="tenurehelp" class="from-text text-muted">This field is required</small>
+            <br>
+            <br>
+
+            <label for="Balance">Balance</label>
+            <input type="number" step=1 class="form-control" id="Balance" name="Balance" placeholder="Balance"
+                aria-label="Enter Balance">
+            <small id="balancehelp" class="from-text text-muted">This field is required</small>
+            <br>
+            <br>
+
+            <label for="NumOfProducts">NumOfProducts</label>
+            <input type="nums" step=1 class="form-control" id="nums" name="nums" placeholder="Num Of Products"
+                aria-label="Enter NumOfProducts">
+            <small id="numshelp" class="from-text text-muted">This field is required</small>
+            <br>
+            <br>
+
+            <label for="HasCrCard">HasCrCard</label>
+            <input type="number" class="form-control" id="HasCrCard" name="HasCrCard" placeholder="HasCrCard"
+                aria-label="Enter HasCrCard">
+            <small id="hashelp" class="from-text text-muted">This field is required</small>
+            <br>
+            <br>
+
+            <label for="IsActiveMember">IsActiveMember</label>
+            <input type="number" class="form-control" id="IsActiveMember" name="IsActiveMember"
+                placeholder="IsActiveMember" aria-label="Enter IsActiveMember">
+            <small id="ishelp" class="from-text text-muted">This field is required</small>
+            <br>
+            <br>
+
+            <label for="EstimatedSalary">EstimatedSalary</label>
+            <input type="number" step=1 class="form-control" id="salary" name="salary" placeholder="EstimatedSalary"
+                aria-label="Enter EstimatedSalary">
+            <small id="salaryhelp" class="from-text text-muted">This field is required</small>
+            <br>
+            <br>
+
+            <button type="submit" class="btn btn-success btn-lg btn-block">Predict</button>
+            <hr>
+            <br>
+            <h5> Customer is: {{ y_pred }}</h5>
+            <hr>
+            <br>
+            <br>
+
+        </div>
+        <br>
+        <br>
+    </div>
+
+</form>
 {% endblock %}
