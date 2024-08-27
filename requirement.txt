@@ -7,3 +7,4 @@ seaborn==0.13.2
 python-multipart==0.0.9
 xgboost==2.1.1
 Flask==3.0.3
+gunicorn==23.0.0
